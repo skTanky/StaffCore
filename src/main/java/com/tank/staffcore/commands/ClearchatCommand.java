@@ -11,7 +11,7 @@ import com.tank.staffcore.util.Lang;
 public class ClearchatCommand implements CommandExecutor {
     
     private static final int BLANK_LINES = 1000;
-// a
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         for (Player online : Bukkit.getOnlinePlayers()) {
