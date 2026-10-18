@@ -1,0 +1,188 @@
+# StaffCore messages
+#
+# Colors: hex like <#RRGGBB> and legacy &-codes both work.
+#
+# {tokens}: any name from the "colors" section below can be used as a token,
+# for example {prefix} or {success}. Placeholders such as {player} are filled
+# in by the plugin when the message is sent.
+#
+# After editing this file, run /staffcore reload.
+
+colors:
+  prefix: "<#8427D6>&lSTAFF &8‣"
+  main: "<#AF6EE6>"
+  second: "&f"
+  third: "&7"
+  separator: "&8"
+  success: "<#4FF522>"
+  error: "<#BF3636>"
+
+  slowchat-prefix: "<#2798F5>&lSLOWCHAT &8‣"
+  slowchat-main: "<#7EC0FF>"
+  mutechat-prefix: "<#F71B1B>&lMUTECHAT &8‣"
+  mutechat-main: "<#FF6B6B>"
+  clearchat-prefix: "<#E8860C>&l⚠"
+  clearchat-main: "<#FFB75E>"
+  reports-prefix: "<#FF3333>&lREPORTS &8‣"
+  reports-main: "<#FF5252>"
+  reports-accent: "<#FF3333>"
+  freeze-title: "<#279CF5>"
+  freeze-main: "<#7DC4F9>"
+  staffchat-message: "<#D8ABFF>"
+  online-staff-main: "<#70BEFA>"
+
+general:
+  console: "This command cannot be executed through console!"
+  no-permission: "{error}You do not have permission to do this"
+  player-not-online: "{prefix} {error}That player is not online."
+
+staffcore:
+  usage: "{prefix} {second}Usage: /staffcore reload"
+  reloaded: "{prefix} {second}Configuration reloaded. Discord logging is {state}{second}."
+  state-active: "{success}active"
+  state-disabled: "{error}disabled"
+
+vanish:
+  actionbar: "&7You are {main}vanished"
+  no-permission-other: "{prefix} {second}You do {error}not {second}have permission to toggle vanish for others!"
+  self-enabled: "{prefix} {second}Your vanish has been {success}enabled{second}!"
+  self-disabled: "{prefix} {second}Your vanish has been {error}disabled{second}!"
+  broadcast-enabled: "{prefix} {main}{player} {second}has {success}enabled {second}vanish!"
+  broadcast-disabled: "{prefix} {main}{player} {second}has {error}disabled {second}vanish!"
+  other-staffer-enabled: "{prefix} {second}Your vanish has been {success}enabled{second}!"
+  other-staffer-disabled: "{prefix} {second}Your vanish has been {error}disabled{second}!"
+  other-broadcast-enabled: "{prefix} {main}{staffer} {second}has {success}enabled {second}vanish for {main}{target}{second}!"
+  other-broadcast-disabled: "{prefix} {main}{staffer} {second}has {error}disabled {second}vanish for {main}{target}{second}!"
+  other-target-enabled: "{prefix} {second}You have {success}enabled {second}vanish for {main}{staffer}{second}!"
+  other-target-disabled: "{prefix} {second}You have {error}disabled {second}vanish for {main}{staffer}{second}!"
+  info-vanished: "{prefix} {main}{player} {second}is in {main}vanish"
+  info-visible: "{prefix} {main}{player} {second}is not in {main}vanish"
+
+staffchat:
+  toggled-on: "{prefix} {second}You have toggled {success}on {second}staffchat!"
+  toggled-off: "{prefix} {second}You have toggled {error}off {second}staffchat!"
+  format: "{prefix} {second}{player} {separator}» {staffchat-message}{message}"
+
+slowchat:
+  invalid-number: "{slowchat-prefix} {error}That isn't a valid number."
+  max-exceeded: "{slowchat-prefix} {second}The max slowchat is {main}{max} {second}seconds!"
+  staff-set: "{prefix} {main}{player} {second}has set the slowchat to {main}{value} {second}seconds!"
+  staff-disabled: "{prefix} {main}{player} {second}has {error}disabled {second}slowchat!"
+  public-set: "{slowchat-prefix} {second}The slowchat has been set to {slowchat-main}{value} seconds{second}!"
+  public-disabled: "{slowchat-prefix} {second}Slowchat has been {error}disabled{second}!"
+  cooldown: "{slowchat-prefix} {second}Please wait before sending another message! {slowchat-main}&o({seconds}s)"
+
+mutechat:
+  staff-muted: "{prefix} {main}{player} {second}has {error}muted {second}the chat!"
+  staff-unmuted: "{prefix} {main}{player} {second}has {success}unmuted {second}the chat!"
+  public-muted: "{mutechat-prefix} {second}Chat has been {error}muted{second}!"
+  public-unmuted: "{mutechat-prefix} {second}Chat has been {success}unmuted{second}!"
+  blocked: "{mutechat-prefix} {second}Chat is currently {error}muted{second}!"
+
+clearchat:
+  cleared: "{clearchat-prefix} {second}Chat has been cleared by {clearchat-main}{player}{second}!"
+
+freeze:
+  usage: "{prefix} {second}Please specify a player to freeze!"
+  notice:
+    - ""
+    - "  {freeze-title}&lYOU HAVE BEEN FROZEN"
+    - ""
+    - "  {separator}| {third}Do {freeze-main}not {third}log out!"
+    - "  {separator}| {third}Follow the instructions of {freeze-main}staff members{third}."
+    - ""
+  title: "{freeze-title}&lʏᴏᴜ ᴀʀᴇ ғʀᴏᴢᴇɴ"
+  subtitle: "{second}ᴅᴏ ɴᴏᴛ ʟᴏɢ ᴏᴜᴛ"
+  unfrozen: "{prefix} {second}You have been {success}unfrozen{second}!"
+  broadcast-frozen: "{prefix} {main}{staffer} {second}has {success}frozen {main}{target}{second}!"
+  broadcast-unfrozen: "{prefix} {main}{staffer} {second}has {error}unfrozen {main}{target}{second}!"
+  commands-blocked: "{prefix} {second}You {error}cannot {second}use commands while frozen!"
+  logged-out: "{prefix} {main}{player} {second}has {error}logged out {second}while frozen!"
+
+reports:
+  usage-player: "{reports-prefix} {third}Please specify a player to report!"
+  player-not-found: "{reports-prefix} {third}That player could not be found!"
+  cooldown: "{reports-prefix} {third}You are on cooldown, please wait before reporting someone again!"
+  cannot-report-self: "{reports-prefix} {third}You cannot report yourself!"
+  no-reasons: "{reports-prefix} {third}No report reasons exist yet, so please include one: {second}/report <player> <reason>"
+  empty-category: "{reports-prefix} {third}There are no reasons in {second}{category} {third}yet."
+  thank-you: "{reports-prefix} {third}Thank you for your {second}report{third}! We will take a look at it as soon as possible!"
+  staff-alert:
+    - ""
+    - "    {reports-accent}&lNEW REPORT"
+    - "       {separator}#{id}"
+    - "  {separator}| {third}Reported: {second}{reported}"
+    - "  {separator}| {third}Reporter: {second}{reporter}"
+    - "  {separator}| {third}Reason: {second}{reason}"
+    - ""
+  join-reminder-one: "{reports-prefix} {third}There is currently {second}{count} active report{third}. Use {second}/reports {third}to view them."
+  join-reminder-many: "{reports-prefix} {third}There are currently {second}{count} active reports{third}. Use {second}/reports {third}to view them."
+
+  categories:
+    chat: "Chat"
+    combat_movement: "Combat/Movement"
+    other: "Other"
+
+  category-item:
+    chat: "{reports-main}&lCHAT"
+    combat_movement: "{reports-main}&lCOMBAT/MOVEMENT"
+    other: "{reports-main}&lOTHER"
+
+  menus:
+    category-title: "Select Report Category"
+    reason-title: "{category} Reasons"
+    confirm-title: "Confirm Report on {player}"
+    back: "{error}&lBACK"
+    cancel: "{error}Cancel"
+    confirm: "{success}Confirm"
+    reason-item: "{reports-main}&l{reason-upper}"
+    confirm-head-name: "{reports-main}&l{player}"
+    confirm-head-lore:
+      - "{reports-tag}"
+      - ""
+      - "{separator}| {third}Reason: {second}{reason}"
+      - ""
+
+  staff-menu:
+    title: "Active Reports ({page}/{pages})"
+    previous: "{success}&lPREVIOUS PAGE"
+    no-previous: "{error}&lNO PREVIOUS PAGE"
+    next: "{success}&lNEXT PAGE"
+    no-next: "{error}&lNO NEXT PAGE"
+    delete-all: "{error}&lDELETE ALL REPORTS"
+    create-reason-name: "{reports-main}&lCREATE REASON"
+    create-reason-lore:
+      - "{reports-tag}"
+      - ""
+      - "{separator}| {third}Register a new reason"
+      - "{separator}| {third}for players to report with."
+    report-name: "{reports-main}&l#{id}"
+    report-lore:
+      - "{reports-tag}"
+      - ""
+      - "{separator}| {third}Reported: {second}{reported}"
+      - "{separator}| {third}Reporter: {second}{reporter}"
+      - "{separator}| {third}Reason: {second}{reason}"
+      - "{separator}| {third}Online Staff Then: {second}{staff}"
+      - "{separator}| {third}Submitted: {second}{date} GMT"
+      - ""
+      - "{separator}ᴄʟɪᴄᴋ ᴛᴏ ᴅᴇʟᴇᴛᴇ"
+    delete-no-permission: "{reports-prefix} {third}You do not have the required {second}permission {third}to delete reports!"
+    deleted: "{reports-prefix} {third}Deleted report with ID {second}#{id}{third}."
+    delete-all-no-permission: "{reports-prefix} {third}You do not have the required {second}permission {third}to delete all reports!"
+    deleted-all: "{reports-prefix} {third}You have {second}deleted {third}all active reports."
+    create-no-permission: "{reports-prefix} {third}You do not have the required {second}permission {third}to create report reasons!"
+    anvil-title: "Type the new reason"
+    reason-exists: "{reports-prefix} {third}That reason already exists!"
+    category-title: "Select Reason Category"
+    category-lore:
+      - "{separator}| {third}Reason: {second}{reason}"
+    category-cancel: "{error}&lCANCEL"
+    category-full: "{reports-prefix} {third}The {second}{category} {third}category is full!"
+    registered: "{reports-prefix} {third}You have registered the reason {second}{reason} {third}under {second}{category}{third}."
+
+  anvil:
+    result-name: "{success}{text}"
+    result-lore:
+      - ""
+      - "{third}Click to continue"

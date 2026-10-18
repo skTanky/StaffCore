@@ -1,0 +1,20 @@
+# After editing this file, run /staffcore reload.
+discord:
+  # Paste a Discord webhook URl here to enable logging.
+  # Leave it empty to disable Discord logging.
+  webhook-url: ""
+
+  # Name and avatar image [OPTIONAL] shown on the log messages.
+  username: "StaffCore"
+  avatar-url: ""
+
+  # Select what gets logged.
+  logging:
+    reports: true
+    delete-report: true
+    delete-all-reports: true
+    staffmode: true
+    vanish: true
+    freeze: true
+    slowchat: true
+    mutechat: true

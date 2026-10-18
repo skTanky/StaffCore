@@ -1,0 +1,89 @@
+name: StaffCore
+version: '1.0.0'
+main: com.tank.staffcore.StaffCore
+api-version: '26.2'
+author: skTank
+commands:
+  vanish:
+    description: Toggle vanish on or off
+    usage: /vanish [player]
+    aliases: [v]
+    permission: staff.vanish
+  vanishinfo:
+    description: Check if a player is vanished
+    usage: /vanishinfo [player]
+    aliases: [vinfo]
+    permission: staff.vanish.info
+  staffchat:
+    description: Toggle or send a staff chat message
+    usage: /staffchat [message]
+    aliases: [sc]
+    permission: staff.chat
+  slowchat:
+    description: Set a global slow mode on chat messages
+    usage: /slowchat <seconds>
+    permission: staff.slowchat
+  mutechat:
+    description: Toggle a global chat mute
+    usage: /mutechat
+    permission: staff.mutechat
+  clearchat:
+    description: Clear the chat for everyone
+    usage: /clearchat
+    aliases: [cc]
+    permission: staff.clearchat
+  staffmode:
+    description: Toggle staff mode
+    usage: /staffmode
+    aliases: [sm]
+    permission: staff.mode
+  report:
+    description: Report a player
+    usage: /report <player> [reason]
+  reports:
+    description: View active reports
+    usage: /reports
+  freeze:
+    description: Freeze or unfreeze a player
+    usage: /freeze <player>
+    permission: staff.freeze
+  staffcore:
+    description: StaffCore admin
+    usage: /staffcore reload
+permissions:
+  staff.vanish:
+    default: op
+  staff.vanish.other:
+    default: op
+  staff.vanish.info:
+    default: op
+  staff.chat:
+    default: op
+  staff.slowchat:
+    default: op
+  staff.slowchat.bypass:
+    default: op
+  staff.mutechat:
+    default: op
+  staff.mutechat.bypass:
+    default: op
+  staff.clearchat:
+    default: op
+  staff.mode:
+    default: op
+  staff.freeze:
+    default: op
+  staff.reports.view:
+    default: op
+  staff.reports.delete:
+    default: op
+  staff.reports.deleteall:
+    default: op
+  staff.reports.createreasonreport:
+    default: op
+  staff.reload:
+    default: op
+  staff.invsee:
+    default: op
+  staff.invsee.modify:
+    default: op
