@@ -1,7 +1,8 @@
 name: StaffCore
-version: '1.0.0'
+version: '${project.version}'
 main: com.tank.staffcore.StaffCore
 api-version: '1.21'
+description: An all in one staff plugin with a wide range of features to assist staff members
 author: skTank
 commands:
   vanish:
