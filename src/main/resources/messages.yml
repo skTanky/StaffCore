@@ -2,9 +2,9 @@
 #
 # Colors: hex like <#RRGGBB> and legacy &-codes both work.
 #
-# {tokens}: any name from the "colors" section below can be used as a token,
-# for example {prefix} or {success}. Placeholders such as {player} are filled
-# in by the plugin when the message is sent.
+# {tokens}: any name from the "colors" or "tokens" sections below can be used
+# as a token, for example {prefix} or {success}. Placeholders such as {player}
+# are filled in by the plugin when the message is sent.
 #
 # After editing this file, run /staffcore reload.
 
@@ -21,7 +21,7 @@ colors:
   slowchat-main: "<#7EC0FF>"
   mutechat-prefix: "<#F71B1B>&lMUTECHAT &8‣"
   mutechat-main: "<#FF6B6B>"
-  clearchat-prefix: "<#E8860C>&l⚠"
+  clearchat-prefix: "<#E8860C>⚠"
   clearchat-main: "<#FFB75E>"
   reports-prefix: "<#FF3333>&lREPORTS &8‣"
   reports-main: "<#FF5252>"
@@ -30,6 +30,11 @@ colors:
   freeze-main: "<#7DC4F9>"
   staffchat-message: "<#D8ABFF>"
   online-staff-main: "<#70BEFA>"
+
+tokens:
+  staffmode-tag: "&8sᴛᴀғғᴍᴏᴅᴇ"
+  reports-tag: "&8ʀᴇᴘᴏʀᴛs"
+  click-hint: "&8ʀɪɢʜᴛᴄʟɪᴄᴋ"
 
 general:
   console: "This command cannot be executed through console!"
@@ -82,6 +87,100 @@ mutechat:
 clearchat:
   cleared: "{clearchat-prefix} {second}Chat has been cleared by {clearchat-main}{player}{second}!"
 
+staffmode:
+  backup-failed: "{prefix} {error}Your inventory could not be backed up, so staffmode was not enabled."
+  restore-failed: "{prefix} {error}Your inventory could not be restored. Please check the console."
+  toggled-on: "{prefix} {second}You have toggled {success}on {second}staffmode!"
+  toggled-off: "{prefix} {second}You have toggled {error}off {second}staffmode!"
+  broadcast-enabled: "{prefix} {main}{player} {second}has {success}enabled {second}staffmode!"
+  broadcast-disabled: "{prefix} {main}{player} {second}has {error}disabled {second}staffmode!"
+  inventory-restored: "{prefix} {second}Your inventory was restored after you left {main}staffmode{second}."
+  nobody-to-teleport: "{prefix} {error}There is nobody to teleport to."
+
+staffmode-items:
+  teleport:
+    name: "<#27EEF5>&lTELEPORT"
+    lore:
+      - "{staffmode-tag}"
+      - ""
+      - "{separator}| {second}Rightclick {third}to randomly"
+      - "{separator}| {third}teleport to a player{third}."
+      - ""
+      - "{click-hint}"
+  reports:
+    name: "<#F5EB27>&lREPORTS"
+    lore:
+      - "{staffmode-tag}"
+      - ""
+      - "{separator}| {second}Rightclick {third}to view"
+      - "{separator}| {third}all {second}active {third}reports."
+      - ""
+      - "{click-hint}"
+  freeze:
+    name: "<#279CF5>&lFREEZE"
+    lore:
+      - "{staffmode-tag}"
+      - ""
+      - "{separator}| {second}Rightclick {third}on a player to"
+      - "{separator}| {second}freeze {third}them."
+      - ""
+      - "{click-hint}"
+  invsee:
+    name: "<#F5CF27>&lINVSEE"
+    lore:
+      - "{staffmode-tag}"
+      - ""
+      - "{separator}| {second}Rightclick {third}on a player to"
+      - "{separator}| {second}view {third}their inventory."
+      - ""
+      - "{click-hint}"
+  online-staff:
+    name: "<#6327E3>&lONLINE STAFF"
+    lore:
+      - "{staffmode-tag}"
+      - ""
+      - "{separator}| {second}Rightclick {third}to view"
+      - "{separator}| {third}all {second}online {third}staff."
+      - ""
+      - "{click-hint}"
+  vanish-disable:
+    name: "<#F55353>&lDISABLE VANISH"
+    lore:
+      - "{staffmode-tag}"
+      - ""
+      - "{separator}| {second}Rightclick {third}to {second}disable"
+      - "{separator}| {third}vanish for yourself."
+      - ""
+      - "{click-hint}"
+  vanish-enable:
+    name: "<#9BFF80>&lENABLE VANISH"
+    lore:
+      - "{staffmode-tag}"
+      - ""
+      - "{separator}| {second}Rightclick {third}to {second}enable"
+      - "{separator}| {third}vanish for yourself."
+      - ""
+      - "{click-hint}"
+
+online-staff:
+  title: "Online Staff"
+  head-name: "{online-staff-main}&l{player}"
+  head-lore:
+    - "{staffmode-tag}"
+    - ""
+    - "{separator}| {third}Vanished: {vanished}"
+    - "{separator}| {third}Staffmode: {staffmode}"
+    - ""
+    - "{separator}ᴄʟɪᴄᴋ ᴛᴏ ᴛᴇʟᴇᴘᴏʀᴛ"
+  answer-yes: "{success}Yes"
+  answer-no: "{error}No"
+  not-online: "{prefix} {error}That player is no longer online."
+  teleported: "{prefix} {second}You have teleported to {main}{player}{second}."
+
+invsee:
+  no-permission: "{prefix} {second}You do {error}not {second}have permission to view inventories!"
+  self: "{prefix} {second}You cannot view your own inventory this way!"
+
 freeze:
   usage: "{prefix} {second}Please specify a player to freeze!"
   notice:
@@ -89,7 +188,7 @@ freeze:
     - "  {freeze-title}&lYOU HAVE BEEN FROZEN"
     - ""
     - "  {separator}| {third}Do {freeze-main}not {third}log out!"
-    - "  {separator}| {third}Follow the instructions of {freeze-main}staff members{third}."
+    - "  {separator}| {third}Follow the instructions of the {freeze-main}staff member{third}."
     - ""
   title: "{freeze-title}&lʏᴏᴜ ᴀʀᴇ ғʀᴏᴢᴇɴ"
   subtitle: "{second}ᴅᴏ ɴᴏᴛ ʟᴏɢ ᴏᴜᴛ"

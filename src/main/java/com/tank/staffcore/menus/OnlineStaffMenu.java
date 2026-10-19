@@ -1,16 +1,17 @@
 package com.tank.staffcore.menus;
 
-import com.tank.staffcore.managers.StaffModeManager;
-import com.tank.staffcore.managers.VanishManager;
-import com.tank.staffcore.util.Lang;
-import com.tank.staffcore.util.MenuItems;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import com.tank.staffcore.managers.StaffModeManager;
+import com.tank.staffcore.managers.VanishManager;
+import com.tank.staffcore.util.Lang;
+import com.tank.staffcore.util.MenuItems;
 
 public class OnlineStaffMenu {
 
@@ -43,8 +44,8 @@ public class OnlineStaffMenu {
             Player member = staff.get(i);
             UUID memberId = member.getUniqueId();
 
-            String vanished = Lang.get(vanishManager.isVanished(member) ? "online-staff.yes" : "online-staff.no");
-            String staffMode = Lang.get(staffModeManager.isInStaffMode(member) ? "online-staff.yes" : "online-staff.no");
+            String vanished = Lang.get(vanishManager.isVanished(member) ? "online-staff.answer-yes" : "online-staff.answer-no");
+            String staffMode = Lang.get(staffModeManager.isInStaffMode(member) ? "online-staff.answer-yes" : "online-staff.answer-no");
 
             menu.set(SLOTS[i],
                     MenuItems.renderedHead(member,
